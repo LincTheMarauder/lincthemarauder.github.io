@@ -42,8 +42,8 @@ function init_pong_game()
 	nset("ball_y_spd", 5)
 	
 	-- start the score at 0:0
-	nset("score_1", 4)
-	nset("score_2", 6)
+	nset("score_1", 0)
+	nset("score_2", 0)
 end
 
 -- paddle logic --
