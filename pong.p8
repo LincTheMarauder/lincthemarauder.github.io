@@ -42,8 +42,8 @@ function init_pong_game()
 	nset("ball_y_spd", 5)
 	
 	-- start the score at 0:0
-	nset("score_1", 0)
-	nset("score_2", 0)
+	nset("score_1", 4)
+	nset("score_2", 6)
 end
 
 -- paddle logic --
@@ -112,12 +112,12 @@ function update_ball()
 	end
 	
 	-- check if the ball has left
-	if (nget("ball_x_pos") < 0) then
+	-- on the left side
+	if (nget("ball_x_pos") < 1) then
 		-- bump score and reset
 		ninc("score_2", 1)
 		
-		-- direct ball slowly at
-		-- player who was scored
+		-- direct ball slowly right
 		nset("ball_x_pos", 60)
  	nset("ball_x_spd", 6)
 	 nset("ball_y_pos", 60)
@@ -125,10 +125,13 @@ function update_ball()
 		sfx(2)
 	end
 	
-		-- check if the ball leaves
+	-- check if the ball has left
+	-- on the right side
 	if (nget("ball_x_pos") > 120) then
 		-- bump score and reset
 		ninc("score_1", 1)
+		
+		-- direct ball slowly left
 		nset("ball_x_pos", 60)
  	nset("ball_x_spd", 4)
 	 nset("ball_y_pos", 60)
@@ -235,7 +238,7 @@ function nget(key)
 end
 
 -- ninc, takes in a lookup key
---  and increments a value
+--  and increments a value,
 --  equivalent to +=
 function ninc(key, value)
  nset(key, nget(key)+value)
