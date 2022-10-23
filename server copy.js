@@ -1,4 +1,4 @@
-const { createPicoSocketServer } = require('pico-socket');
+const { createPicoSocketServer } = require("..");
 
 createPicoSocketServer({
   // -------------------------------------
