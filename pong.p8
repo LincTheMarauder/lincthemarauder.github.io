@@ -113,7 +113,7 @@ function update_ball()
 	
 	-- check if the ball has left
 	-- on the left side
-	if (nget("ball_x_pos") < 1) then
+	if (nget("ball_x_pos") < 6) then
 		-- bump score and reset
 		ninc("score_2", 1)
 		
